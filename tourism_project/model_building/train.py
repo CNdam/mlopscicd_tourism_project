@@ -67,7 +67,7 @@ with mlflow.start_run():
     results = grid_search.cv_results_
     for i in range(len(results["params"])):
         with mlflow.start_run(nested=True):
-            mlflow.log_params(results["params"|i])
+            mlflow.log_params(results["params"][i])
             mlflow.log_metric("mean_test_score", results["mean_test_score"][i])
             mlflow.log_metric("std_test_score", results["std_test_score"][i])
 
